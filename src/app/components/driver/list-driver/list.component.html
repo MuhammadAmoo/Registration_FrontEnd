@@ -1,0 +1,23 @@
+<div class="container newContainer">
+
+    <div class="card-header">
+        <h3>List of Drivers</h3>
+    </div>
+
+    <div *ngFor="Card for drivers"  class="card newCard">
+
+     <span style="display: none">{{driver.id}}</span>
+     <span class="myCard-Driver">{{driver.driverFirstName}}</span>
+     <span class="myCard-Driver">{{driver.driverLastName}}</span>
+     <span class="myCard-Driver">{{driver.age}}</span>
+     <span class="myCard-Driver">{{driver.registration_no}}</span>
+
+     <div class="myCard-buttons">
+        <button  class="edit" (click)="editDriver(driver.id)"><i class="fa fa-edit" ></i></button>
+        <button class="delete" (click)="deleteDriver(driver.id)"><i class="fa fa-remove bg-danger"></i></button>
+      </div>
+
+
+    </div>
+
+</div>>    
