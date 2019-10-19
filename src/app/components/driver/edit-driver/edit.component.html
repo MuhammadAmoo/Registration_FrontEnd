@@ -1,1 +1,58 @@
-<p>edit works!</p>
+<div class="container-fluid" style="margin-top: 12px">
+
+    <div class="card-header">
+        <h3>Edit a driver</h3>
+    </div>
+
+    <div class="card">
+
+        <div class="card-body">
+            <form (ngSubmit)="onSubmit()" #driverForm="ngForm">
+
+                <div class="form-group ">
+                    <label for="driverFName">First Name:</label>
+                    <input type="text" id="driverFName" #driverFirstName="ngModel" [(ngModel)]="driver.driverFirstName"
+                        name="firstName" class="form-control" [value]="driver.driverFirstName" required />
+                    <div [hidden]="driverFirstName.valid || driverFirstName.pristine" class="alert alert-danger"> This
+                        field is required </div>
+                </div>
+
+                <div class="form-group ">
+                    <label for="driverLName">Last Name:</label>
+                    <input type="text" id="driverLName" #driverLastName="ngModel" [(ngModel)]="driver.driverLastName"
+                        name="title" class="form-control" [value]="driver.driverLastName" required />
+                    <div [hidden]="driverLastName.valid || driverLastName.pristine" class="alert alert-danger">This
+                        field is required </div>
+
+                </div>
+
+                <div class="form-group ">
+                    <label for="driverAge">Age:</label>
+                    <input type="text" id="age" #age="ngModel" [(ngModel)]="driver.age" name="title"
+                        class="form-control" [value]="driver.age" required />
+                </div>
+
+                <div class="form-group ">
+                    <label for="registration_no">Registration Number:</label>
+                    <input type="text" id="registration_no" #registration_no="ngModel"
+                        [(ngModel)]="driver.registration_no" name="title" class="form-control"
+                        [value]="driver.registration_no" required />
+                    <div [hidden]="registration_no.valid || registration_no.pristine" class="alert alert-danger">This
+                        field is required </div>
+
+                </div>
+
+                <div>
+                    <button type="submit" [disabled]="driverForm.form.invalid"
+                        class="btn btn-primary col-sm-12 col-md-2" style="margin-right:5px; margin-bottom: 5px"
+                        routerLink="drivers">Save</button>
+                    <button (click)="cancel()" class="btn btn-secondary col-sm-12 col-md-2"
+                        style="margin-right:5px; margin-bottom: 5px"> Cancel</button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+</div>

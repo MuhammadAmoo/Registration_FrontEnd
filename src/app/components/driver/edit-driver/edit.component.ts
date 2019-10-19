@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Driver } from 'src/app/model/driver';
+import { DriverService } from 'selenium-webdriver/remote';
 
 @Component({
   selector: 'app-edit',
@@ -13,3 +15,4 @@ export class EditComponent implements OnInit {
   }
 
 }
+ 

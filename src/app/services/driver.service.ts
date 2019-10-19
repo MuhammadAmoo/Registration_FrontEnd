@@ -8,9 +8,9 @@ import { Driver } from '../model/driver';
 @Injectable({
   providedIn: 'root'
 })
-export class DriverService {
+export class DriverServices {
 
-  private baseURL: string = '//localhost:4200/driver'; //check
+  private baseURL: string = '//localhost:4200/driver'; 
   private id:number;
 
   constructor(private http:HttpClient) {
@@ -20,7 +20,7 @@ export class DriverService {
 //Create new Driver
 createDriver(driver:Driver) : Observable<Driver>
 {
-  return this.http.post<Driver>(this.baseURL + '/add', driver);
+  return this.http.post<Driver>(this.baseURL + '/create', driver);
 }
 
 //Find by ID

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Driver} from "../../../model/driver";
-import { DriverService } from 'src/app/services/driver.service';
+import { DriverServices } from 'src/app/services/driver.service';
 import { Router } from '@angular/router';
 
 
@@ -17,7 +17,7 @@ export class ListComponent implements OnInit {
   private driver:Driver;
   id:number;
 
-  constructor(private driverService:DriverService, private router:Router) { }
+  constructor(private driverService:DriverServices, private router:Router) { }
 
   ngOnInit() 
   {
@@ -48,7 +48,7 @@ export class ListComponent implements OnInit {
   }
 
   setActive(){
-    document.getElementById('driverLink').classList.add('active');
+    document.getElementById('listLink').classList.add('active');
     document.getElementById('addLink').classList.remove('active');
   }
 

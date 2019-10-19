@@ -1,23 +1,30 @@
-<div class="container newContainer">
+<div class="container-fluid">
 
-    <div class="card-header">
-        <h3>List of Drivers</h3>
+    <div>
+        <a class="btn btn-dark" style="color: white; float: right; margin-top:10px; margin-bottom:10px;" routerLink="/patients/new">Register Patient</a>
     </div>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Registration number</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let driver of drivers">
+          <tr>
+            <td>{{driver.driverFirstName}}</td>
+            <td>{{driver.driverLastName}}</td>   
+            <td>{{driver.age}}</td>
+            <td>{{driver.registration_no}}</td>
+         
 
-    <div *ngFor="Card for drivers"  class="card newCard">
-
-     <span style="display: none">{{driver.id}}</span>
-     <span class="myCard-Driver">{{driver.driverFirstName}}</span>
-     <span class="myCard-Driver">{{driver.driverLastName}}</span>
-     <span class="myCard-Driver">{{driver.age}}</span>
-     <span class="myCard-Driver">{{driver.registration_no}}</span>
-
-     <div class="myCard-buttons">
-        <button  class="edit" (click)="editDriver(driver.id)"><i class="fa fa-edit" ></i></button>
-        <button class="delete" (click)="deleteDriver(driver.id)"><i class="fa fa-remove bg-danger"></i></button>
-      </div>
-
-
-    </div>
-
-</div>>    
+            <td><a class="btn btn-secondary" style="color: white" (click)="editDriver(driver.id)">Edit</a></td>
+            <td><a class="btn btn-danger" style="color: white" (click)="deleteDriver(driver.id)">Delete</a></td>
+          </tr>
+        </tbody>
+      </table>
+</div>  

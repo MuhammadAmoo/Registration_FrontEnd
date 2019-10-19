@@ -8,6 +8,9 @@ import { FooterComponent } from './components/sections/footer/footer.component';
 import { AddComponent } from './components/Driver/add-driver/add.component';
 import { ListComponent } from './components/Driver/list-driver/list.component';
 import { EditComponent } from './components/Driver/edit-driver/edit.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -19,8 +22,11 @@ import { EditComponent } from './components/Driver/edit-driver/edit.component';
     EditComponent
   ],
   imports: [
+
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

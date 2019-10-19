@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DriverService } from 'src/app/services/driver.service';
+import { DriverServices } from 'src/app/services/driver.service';
 import { Driver } from '../../../model/driver';
 import {Router} from '@angular/router';
 
@@ -15,7 +15,7 @@ export class AddComponent implements OnInit {
   driver: Driver = new Driver();
   submitted = false;
 
-  constructor(private driverService:DriverService, private router:Router) { }
+  constructor(private driverService:DriverServices, private router:Router) { }
 
   ngOnInit() 
   {
@@ -38,12 +38,12 @@ export class AddComponent implements OnInit {
   {
     this.submitted = true;
     this.save();
-    this.router.navigate(['/driver']);
+    this.router.navigate(['/drivers']);
   }  
 
   cancel()
   {
-    this.router.navigate(['/driver']);
+    this.router.navigate(['/drivers']);
   }
 
 }
