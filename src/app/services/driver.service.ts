@@ -45,7 +45,7 @@ deleteDriver(id: string) : Observable<any>
 //Get all Drivers
 getAll() : Observable<Driver[]>
 {
-  return this.http.get<Driver[]>(this.baseURL + '/getAll');
+  return this.http.get<Driver[]>(this.baseURL + '/getall');
 }
 
 saveId(id:string)
