@@ -11,7 +11,7 @@ import { Driver } from '../model/driver';
 export class DriverServices {
 
   private baseURL: string = '//localhost:4200/driver'; 
-  private id:number;
+  private id:string;
 
   constructor(private http:HttpClient) {
 
@@ -24,7 +24,7 @@ createDriver(driver:Driver) : Observable<Driver>
 }
 
 //Find by ID
-findDriverById(id:number) : Observable<Driver>
+findDriverById(id:string) : Observable<Driver>
 {
   return this.http.get<Driver>(this.baseURL + '/find/' + id);
 }
@@ -37,7 +37,7 @@ updateDriver(driver:Driver) : Observable<Driver>{
 }
 
 //Delete Existing Driver
-deleteDriver(id: number) : Observable<any>
+deleteDriver(id: string) : Observable<any>
 {
   return this.http.delete(this.baseURL + '/delete/' + id);
 }
@@ -48,12 +48,12 @@ getAll() : Observable<Driver[]>
   return this.http.get<Driver[]>(this.baseURL + '/getAll');
 }
 
-saveId(id:number)
+saveId(id:string)
 {
   this.id = id;
 }
 
-getId() : number
+getId() : string
 {
   return this.id;
 }

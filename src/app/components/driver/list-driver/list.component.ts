@@ -15,7 +15,7 @@ export class ListComponent implements OnInit {
   private drivers: Driver[];
 
   private driver:Driver;
-  id:number;
+  id:string;
 
   constructor(private driverService:DriverServices, private router:Router) { }
 
@@ -32,7 +32,7 @@ export class ListComponent implements OnInit {
     });
   }
 
-  deleteDriver(id:number)
+  deleteDriver(id:string)
   {
     this.driverService.deleteDriver(id).subscribe
     (
@@ -40,7 +40,7 @@ export class ListComponent implements OnInit {
     );
   }
 
-  editDriver(id:number) {
+  editDriver(id:string) {
 
     this.router.navigate(['/edit']);
     this.driverService.saveId(id);
